@@ -36,15 +36,42 @@ namespace Estudio
             {
                 MessageBox.Show("Usuário ADM");
                 groupBox1.Visible = false;
-                //menuStrip1.Enabled = true;
+                menuStrip1.Enabled = true;
             }
             if (tipo == 2)
             {
                 MessageBox.Show("Usuário Restrito");
                 groupBox1.Visible = false;
-                //menuStrip1.Enabled = true;
-                //cadastrarLoginToolStripMenuItem.Enabled = false;
+                menuStrip1.Enabled = true;
+                cadastrarLoginToolStripMenuItem.Enabled = false;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sAirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuario cad_login = new CadastroUsuario();
+            cad_login.MdiParent = this;
+            cad_login.Show();
         }
     }
 }

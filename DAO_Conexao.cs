@@ -50,5 +50,27 @@ namespace Estudio
             }
             return tipo;
         }
+
+        public static Boolean CadLogin(string usuario, string senha, int tipo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand login = new MySqlCommand("Select * from Estudio_Login where usuario ='" + usuario + "' and senha ='" + senha + "'", con);
+                MySqlDataReader resultado = login.ExecuteReader();
+                if (resultado.Read())
+                {
+                    tipo = Convert.ToInt32(resultado["tipo"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     } 
 }
