@@ -21,5 +21,27 @@ namespace Estudio
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            int tipo = 0;
+           if(cboTipo.SelectedIndex == 0)
+            {
+                tipo = 1;
+            }
+           else if (cboTipo.SelectedIndex == 1)
+            {
+                tipo = 2;
+            }
+           if (DAO_Conexao.CadLogin(txtUsuario.Text, txtSenha.Text, tipo))
+            {
+                MessageBox.Show("Cadastro realizado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Erro no cadastro!");
+            }
+
+        }
     }
 }
