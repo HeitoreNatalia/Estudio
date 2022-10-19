@@ -75,5 +75,12 @@ namespace Estudio
             cad_login.MdiParent = this;
             cad_login.Show();
         }
+
+        private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exclusao exclusao = new Exclusao();
+            exclusao.MdiParent = this;
+            exclusao.Show();
+        }
     }
 }

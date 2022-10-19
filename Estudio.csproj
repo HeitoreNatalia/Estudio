@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\Estudio\v4.5.2\MySql.Data.dll</HintPath>
+      <HintPath>..\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +69,12 @@
     <Compile Include="Estudio.Designer.cs">
       <DependentUpon>Estudio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exclusao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exclusao.Designer.cs">
+      <DependentUpon>Exclusao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroAluno.resx">
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estudio.resx">
       <DependentUpon>Estudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exclusao.resx">
+      <DependentUpon>Exclusao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
