@@ -13,6 +13,7 @@ namespace Estudio
         private String descricao;
         private float preco;
         private int qtd_alunos, qtd_aulas;
+        private int ativa;
 
         //getters e seters
         public string Descricao { get => descricao; set => descricao = value; }
@@ -27,6 +28,7 @@ namespace Estudio
             Preco = preco;
             Qtd_alunos = qtd_alunos;
             Qtd_aulas = qtd_aulas;
+            ativa = 1;
         }
 
         public Modalidade(string descricao)
@@ -46,7 +48,8 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("INSERT INTO table(descricao, preco, qtd_alunos, nqtd_aulas) VALUES ('" + descricao + "','" + preco + "','" + qtd_alunos + "','" + qtd_aulas + "')", DAO_Conexao.con);
+                Console.WriteLine(descricao +"\n" + preco + "\n" + qtd_alunos + "\n" + qtd_aulas);
+                MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) VALUES ('" + descricao + "', " + preco + " , " + qtd_alunos + " , " + qtd_aulas + " )", DAO_Conexao.con);
                 //insere.Parameters.Add
 
                 insere.ExecuteNonQuery();
@@ -65,55 +68,50 @@ namespace Estudio
 
         public MySqlDataReader consultarModalidade()
         {
-            bool existe = false;
+            MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM table " + "WHERE descricao='" + descricao + "'", DAO_Conexao.con);
-                MySqlDataReader resultado = consulta.ExecuteReader();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade " + "WHERE descricao='" + descricao + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
                 return resultado;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            finally
-            {
-                DAO_Conexao.con.Close();
-            }
-            return null;
+            return resultado;
             //medoto de consulta aum registro da classe modalidade dada uma descricao
         }
 
         //Não sei se o retorno está certo
         public MySqlDataReader consultarTodasModalidades()
         {
+            MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM table", DAO_Conexao.con);
-                MySqlDataReader resultado = consulta.ExecuteReader();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade WHERE ativa = 0 ORDER BY descricao" , DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
                 return resultado;
             }
             catch(Exception ex)
             {
                 Console.WriteLine (ex.ToString());
             }
-            finally
-            {
-                DAO_Conexao.con.Close ();
-            }
-            return null;
+            
+            return resultado;
             //metodo de consulta a todos os registros de modalidade
         }
 
-        /*public bool atualizarModalidade(string modalidade, string mudanca)
+        public bool atualizarModalidade()
         {
             bool alterou = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand alteracao = new MySqlCommand("UPDATE table set " + modalidade + " = '" + mudanca + "' WHERE descricao = " + descricao, DAO_Conexao.con);
+                MySqlCommand alteracao = new MySqlCommand("UPDATE Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) SET VALUES (" + 
+                    preco + " , " + " , " + qtd_alunos + " , " + qtd_aulas + "' WHERE descricao = " + descricao, DAO_Conexao.con);
                 alteracao.ExecuteNonQuery();
                 alterou = true;
             }
@@ -127,7 +125,7 @@ namespace Estudio
             }
             //metodo de atualizacao de registro
             return alterou;
-        }*/
+        }
             
         public bool excluirModalidade()
         {

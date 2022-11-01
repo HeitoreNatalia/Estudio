@@ -101,6 +101,7 @@
             this.btnAtualizar.TabIndex = 4;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // label4
             // 
@@ -146,6 +147,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Consulta_Modalidade";
             this.Text = "Consultar Modalidades";
+            this.Load += new System.EventHandler(this.Consulta_Modalidade_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
