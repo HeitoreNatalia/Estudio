@@ -13,7 +13,6 @@ namespace Estudio
         private String descricao;
         private float preco;
         private int qtd_alunos, qtd_aulas;
-        private int ativa;
 
         //getters e seters
         public string Descricao { get => descricao; set => descricao = value; }
@@ -28,7 +27,6 @@ namespace Estudio
             Preco = preco;
             Qtd_alunos = qtd_alunos;
             Qtd_aulas = qtd_aulas;
-            ativa = 1;
         }
 
         public Modalidade(string descricao)
@@ -48,7 +46,6 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                Console.WriteLine(descricao +"\n" + preco + "\n" + qtd_alunos + "\n" + qtd_aulas);
                 MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) VALUES ('" + descricao + "', " + preco + " , " + qtd_alunos + " , " + qtd_aulas + " )", DAO_Conexao.con);
                 //insere.Parameters.Add
 
@@ -110,8 +107,8 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand alteracao = new MySqlCommand("UPDATE Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) SET VALUES (" + 
-                    preco + " , " + " , " + qtd_alunos + " , " + qtd_aulas + "' WHERE descricao = " + descricao, DAO_Conexao.con);
+                MySqlCommand alteracao = new MySqlCommand("UPDATE Estudio_Modalidade SET preco=" + 
+                    preco + " , qtd_alunos= " + qtd_alunos + " , qtd_aulas= " + qtd_aulas + " WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
                 alteracao.ExecuteNonQuery();
                 alterou = true;
             }

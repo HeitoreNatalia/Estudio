@@ -53,7 +53,22 @@ namespace Estudio
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            Modalidade modalidade = new Modalidade(Convert.ToString(cboDescricao.SelectedItem), float.Parse(txtPreco.Text), int.Parse(txtQtdAlunos.Text), int.Parse(txtQtdAulas.Text));
 
+            modalidade.atualizarModalidade();
+            txtPreco.Enabled = false;
+            txtQtdAlunos.Enabled = false;
+            txtQtdAulas.Enabled = false;
+            btnAtualizar.Enabled = false;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtPreco.Enabled = true;
+            txtQtdAlunos.Enabled = true;
+            txtQtdAulas.Enabled = true;
+            btnAtualizar.Enabled = true;
         }
     }
 }
