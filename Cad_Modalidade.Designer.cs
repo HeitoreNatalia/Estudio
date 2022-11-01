@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.txtQtdAlunos = new System.Windows.Forms.TextBox();
             this.txtQtdAulas = new System.Windows.Forms.TextBox();
+            this.txtQtdAlunos = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,32 +59,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
-            // label1
+            // txtQtdAulas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descrição: ";
+            this.txtQtdAulas.Location = new System.Drawing.Point(174, 169);
+            this.txtQtdAulas.Name = "txtQtdAulas";
+            this.txtQtdAulas.Size = new System.Drawing.Size(362, 20);
+            this.txtQtdAulas.TabIndex = 8;
             // 
-            // label2
+            // txtQtdAlunos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Preço: ";
+            this.txtQtdAlunos.Location = new System.Drawing.Point(174, 127);
+            this.txtQtdAlunos.Name = "txtQtdAlunos";
+            this.txtQtdAlunos.Size = new System.Drawing.Size(362, 20);
+            this.txtQtdAlunos.TabIndex = 7;
             // 
-            // label3
+            // txtPreco
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Quantidade de Alunos: ";
+            this.txtPreco.Location = new System.Drawing.Point(174, 85);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(362, 20);
+            this.txtPreco.TabIndex = 6;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(174, 47);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(362, 20);
+            this.txtDescricao.TabIndex = 5;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(174, 214);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(224, 23);
+            this.btnCadastrar.TabIndex = 4;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label4
             // 
@@ -95,43 +107,32 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Quantidade de Aulas:";
             // 
-            // btnCadastrar
+            // label3
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(174, 214);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(224, 23);
-            this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Quantidade de Alunos: ";
             // 
-            // txtDescricao
+            // label2
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(174, 47);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(362, 20);
-            this.txtDescricao.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Preço: ";
             // 
-            // txtPreco
+            // label1
             // 
-            this.txtPreco.Location = new System.Drawing.Point(174, 85);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(362, 20);
-            this.txtPreco.TabIndex = 6;
-            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
-            // 
-            // txtQtdAlunos
-            // 
-            this.txtQtdAlunos.Location = new System.Drawing.Point(174, 127);
-            this.txtQtdAlunos.Name = "txtQtdAlunos";
-            this.txtQtdAlunos.Size = new System.Drawing.Size(362, 20);
-            this.txtQtdAlunos.TabIndex = 7;
-            // 
-            // txtQtdAulas
-            // 
-            this.txtQtdAulas.Location = new System.Drawing.Point(174, 169);
-            this.txtQtdAulas.Name = "txtQtdAulas";
-            this.txtQtdAulas.Size = new System.Drawing.Size(362, 20);
-            this.txtQtdAulas.TabIndex = 8;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Descrição: ";
             // 
             // Cad_Modalidade
             // 

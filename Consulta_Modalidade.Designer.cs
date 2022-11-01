@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboDescricao = new System.Windows.Forms.ComboBox();
             this.txtQtdAulas = new System.Windows.Forms.TextBox();
             this.txtQtdAlunos = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboDescricao = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
+            // 
+            // cboDescricao
+            // 
+            this.cboDescricao.FormattingEnabled = true;
+            this.cboDescricao.Location = new System.Drawing.Point(174, 41);
+            this.cboDescricao.Name = "cboDescricao";
+            this.cboDescricao.Size = new System.Drawing.Size(362, 21);
+            this.cboDescricao.TabIndex = 9;
+            this.cboDescricao.SelectedIndexChanged += new System.EventHandler(this.cboDescricao_SelectedIndexChanged);
             // 
             // txtQtdAulas
             // 
@@ -128,14 +137,6 @@
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição: ";
-            // 
-            // cboDescricao
-            // 
-            this.cboDescricao.FormattingEnabled = true;
-            this.cboDescricao.Location = new System.Drawing.Point(174, 41);
-            this.cboDescricao.Name = "cboDescricao";
-            this.cboDescricao.Size = new System.Drawing.Size(362, 21);
-            this.cboDescricao.TabIndex = 9;
             // 
             // Consulta_Modalidade
             // 

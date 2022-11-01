@@ -19,7 +19,15 @@ namespace Estudio
 
         private void txtPreco_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Modalidade modalidade = new Modalidade(txtDescricao.Text, float.Parse(txtPreco.Text), Convert.ToInt16(txtQtdAlunos.Text), Convert.ToInt16(txtQtdAulas.Text));
+            if (modalidade.cadastrarModalidade())
+                MessageBox.Show("Cadastro realizado com sucesso");
+            else
+                MessageBox.Show("Erro no cadastro");
         }
     }
 }

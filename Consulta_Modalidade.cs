@@ -16,5 +16,10 @@ namespace Estudio
         {
             InitializeComponent();
         }
+
+        private void cboDescricao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
