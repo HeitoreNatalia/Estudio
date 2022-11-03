@@ -24,18 +24,14 @@ namespace Estudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Modalidade modalidade = new Modalidade(txtDescricao.Text, (float)Convert.ToDecimal(txtPreco.Text), int.Parse(txtQtdAlunos.Text), int.Parse(txtQtdAulas.Text));
+            Modalidade modalidade = new Modalidade(txtDescricao.Text, float.Parse(txtPreco.Text, CultureInfo.InvariantCulture), int.Parse(txtQtdAlunos.Text), int.Parse(txtQtdAulas.Text));
          
             if (modalidade.cadastrarModalidade())
             {
-                Console.WriteLine("\n STRING: " + txtPreco.Text);
-                Console.WriteLine("\n (FLOAT)Convert.todecimal: " + (float)Convert.ToDecimal(txtPreco.Text));
                 MessageBox.Show("Cadastro realizado com sucesso");
             }
             else
                 MessageBox.Show("Erro no cadastro");
-                
-
         }
     }
 }

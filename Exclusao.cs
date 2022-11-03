@@ -12,6 +12,8 @@ namespace Estudio
 {
     public partial class Exclusao : Form
     {
+
+
         public Exclusao()
         {
             InitializeComponent();
@@ -38,6 +40,11 @@ namespace Estudio
         }
 
         private void mtxCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Exclusao_Load(object sender, EventArgs e)
         {
 
         }

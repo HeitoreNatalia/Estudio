@@ -60,6 +60,7 @@ namespace Estudio
             this.Controls.Add(this.mtxCPF);
             this.Name = "Exclusao";
             this.Text = "Exclusao";
+            this.Load += new System.EventHandler(this.Exclusao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

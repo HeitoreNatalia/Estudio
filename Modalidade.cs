@@ -64,7 +64,6 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                Console.WriteLine(consertaFloat(preco));
                 MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) VALUES ('" + descricao + "', '" +  consertaFloat
                     (preco)  + "' , " + qtd_alunos + " , " + qtd_aulas + " )", DAO_Conexao.con);
                 //insere.Parameters.Add
@@ -128,7 +127,7 @@ namespace Estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand alteracao = new MySqlCommand("UPDATE Estudio_Modalidade SET preco=" + 
-                    preco + " , qtd_alunos= " + qtd_alunos + " , qtd_aulas= " + qtd_aulas + " WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
+                    consertaFloat(preco) + " , qtd_alunos= " + qtd_alunos + " , qtd_aulas= " + qtd_aulas + " WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
                 alteracao.ExecuteNonQuery();
                 alterou = true;
             }
@@ -150,7 +149,7 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclusao = new MySqlCommand("UPDATE table SET ativo = 1 WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand exclusao = new MySqlCommand("UPDATE Estudio_Modalidade SET ativa = '1' WHERE descricao = '" + descricao + "'", DAO_Conexao.con);
                 exclusao.ExecuteNonQuery();
                 excluiu = true;
             }

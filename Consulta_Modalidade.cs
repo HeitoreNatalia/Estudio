@@ -13,12 +13,10 @@ namespace Estudio
 {
     public partial class Consulta_Modalidade : Form
     {
-        int op = 0;
         public Consulta_Modalidade()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-            this.op = op;
 
             Modalidade cad = new Modalidade();
             MySqlDataReader r = cad.consultarTodasModalidades();
@@ -27,10 +25,6 @@ namespace Estudio
                 cboDescricao.Items.Add(r["descricao"].ToString());
             }
             DAO_Conexao.con.Close();
-            if (op == 2)
-            {
-                btnAtualizar.Visible = true;
-            }
         }
 
         private void cboDescricao_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,11 +49,19 @@ namespace Estudio
         {
             Modalidade modalidade = new Modalidade(Convert.ToString(cboDescricao.SelectedItem), float.Parse(txtPreco.Text), int.Parse(txtQtdAlunos.Text), int.Parse(txtQtdAulas.Text));
 
-            modalidade.atualizarModalidade();
-            txtPreco.Enabled = false;
-            txtQtdAlunos.Enabled = false;
-            txtQtdAulas.Enabled = false;
-            btnAtualizar.Enabled = false;
+            if(modalidade.atualizarModalidade())
+            {
+                MessageBox.Show("Atualizado com sucesso!");
+                txtPreco.Enabled = false;
+                txtQtdAlunos.Enabled = false;
+                txtQtdAulas.Enabled = false;
+                btnAtualizar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Ocorreu um erro");
+            }
+            
 
         }
 
