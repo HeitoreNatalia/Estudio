@@ -38,6 +38,24 @@ namespace Estudio
         {
         }
 
+        private string consertaFloat(float floatquebrado)
+        {
+            string lalala = floatquebrado.ToString();
+            string novofloat = "";
+            foreach (char c in lalala)
+            {
+                if (c == ',')
+                {
+                    novofloat += ".";
+                }
+                else
+                {
+                    novofloat += c.ToString();
+                }
+            }
+            return novofloat;
+        }
+
         //métodos
         public bool cadastrarModalidade()
         {
@@ -46,7 +64,9 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) VALUES ('" + descricao + "', " + preco + " , " + qtd_alunos + " , " + qtd_aulas + " )", DAO_Conexao.con);
+                Console.WriteLine(consertaFloat(preco));
+                MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Modalidade(descricao, preco, qtd_alunos, qtd_aulas) VALUES ('" + descricao + "', '" +  consertaFloat
+                    (preco)  + "' , " + qtd_alunos + " , " + qtd_aulas + " )", DAO_Conexao.con);
                 //insere.Parameters.Add
 
                 insere.ExecuteNonQuery();
