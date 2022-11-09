@@ -96,6 +96,7 @@
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Turmas.cs" />
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
