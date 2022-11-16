@@ -120,6 +120,34 @@ namespace Estudio
             //metodo de consulta a todos os registros de modalidade
         }
 
+        public int selectId()
+        {
+            MySqlDataReader r = null;
+            int resultado = -1;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand retorno = new MySqlCommand("SELECT id FROM Estudio_Modalidade where descricao = '" + descricao + "'", DAO_Conexao.con);
+                r = retorno.ExecuteReader();
+                if (r.Read())
+                {
+                    resultado = int.Parse(r["id"].ToString());
+                }
+                return resultado;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return resultado;
+
+        }
+
         public bool atualizarModalidade()
         {
             bool alterou = false;

@@ -126,5 +126,17 @@ namespace Estudio
                 exclusao_modalidade.Show();
             }                
         }
+
+        private void cadastroDeTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurmaForms turmaForms = new TurmaForms();
+            turmaForms.MdiParent = this;
+            turmaForms.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
