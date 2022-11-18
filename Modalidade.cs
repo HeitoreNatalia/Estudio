@@ -127,11 +127,11 @@ namespace Estudio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand retorno = new MySqlCommand("SELECT id FROM Estudio_Modalidade where descricao = '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand retorno = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade where descricao = '" + descricao + "'", DAO_Conexao.con);
                 r = retorno.ExecuteReader();
                 if (r.Read())
                 {
-                    resultado = int.Parse(r["id"].ToString());
+                    resultado = int.Parse(r["idEstudio_Modalidade"].ToString());
                 }
                 return resultado;
             }

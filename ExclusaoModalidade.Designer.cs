@@ -1,6 +1,6 @@
 ﻿namespace Estudio
 {
-    partial class Exclusao_Modalidade
+    partial class ExclusaoModalidade
     {
         /// <summary>
         /// Required designer variable.

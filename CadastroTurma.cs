@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Estudio
 {
-    public partial class TurmaForms : Form
+    public partial class CadastroTurma : Form
     {
-        public TurmaForms()
+        public CadastroTurma()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -62,8 +62,20 @@ namespace Estudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Modalidade modalidade = new Modalidade(dataGridView1.CurrentCell.Value.ToString());
+            Modalidade modalidade = new Modalidade(txtModalidade.Text);
             Turma turma = new Turma(txtProfessor.Text, txtDiaSemana.Text, mskHora.Text, modalidade.selectId());
+            if (turma.cadastrarTurma())
+                MessageBox.Show("Cadastro realizado com sucesso");
+            else
+            {
+                MessageBox.Show("Erro no cadastro");
+            }
+
+            txtModalidade.Text = "";
+            txtProfessor.Text = "";
+            txtDiaSemana.Text = "";
+            mskHora.Text = "";
+
         }
     }
 }

@@ -38,6 +38,8 @@ namespace Estudio
 
         //métodos
 
+
+
         public bool cadastrarTurma()
         {
             //metodo de inserção de registros no banco
@@ -46,7 +48,7 @@ namespace Estudio
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("INSERT INTO Estudio_Turma(id_Modalidade, professorTurma, diasemanaTurma, horaTurma, nalunosmatriculadosTurma) VALUES ('" + modalidade + "', '" + professor +
-                    "' , '" + dia_semana + "' , '" + hora + "' )", DAO_Conexao.con);
+                    "' , '" + dia_semana + "' , '" + hora + "' , '" + 10 + "')", DAO_Conexao.con);
                 //insere.Parameters.Add
 
                 insere.ExecuteNonQuery();

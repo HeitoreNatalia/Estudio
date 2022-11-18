@@ -119,9 +119,9 @@ namespace Estudio
 
         private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<Exclusao_Modalidade>().Count() == 0)
+            if (Application.OpenForms.OfType<ExclusaoModalidade>().Count() == 0)
             {
-                Exclusao_Modalidade exclusao_modalidade = new Exclusao_Modalidade();
+                ExclusaoModalidade exclusao_modalidade = new ExclusaoModalidade();
                 exclusao_modalidade.MdiParent = this;
                 exclusao_modalidade.Show();
             }                
@@ -129,7 +129,7 @@ namespace Estudio
 
         private void cadastroDeTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TurmaForms turmaForms = new TurmaForms();
+            CadastroTurma turmaForms = new CadastroTurma();
             turmaForms.MdiParent = this;
             turmaForms.Show();
         }

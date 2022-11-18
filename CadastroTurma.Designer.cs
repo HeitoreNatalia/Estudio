@@ -1,7 +1,7 @@
 ﻿
 namespace Estudio
 {
-    partial class TurmaForms
+    partial class CadastroTurma
     {
         /// <summary>
         /// Required designer variable.

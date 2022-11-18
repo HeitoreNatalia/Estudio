@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Estudio
 {
-    public partial class Exclusao_Modalidade : Form
+    public partial class ExclusaoModalidade : Form
     {
-        public Exclusao_Modalidade()
+        public ExclusaoModalidade()
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;

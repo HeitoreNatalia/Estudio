@@ -87,21 +87,27 @@
     <Compile Include="Exclusao.Designer.cs">
       <DependentUpon>Exclusao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exclusao_Modalidade.cs">
+    <Compile Include="ExclusaoTurma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exclusao_Modalidade.Designer.cs">
-      <DependentUpon>Exclusao_Modalidade.cs</DependentUpon>
+    <Compile Include="ExclusaoTurma.Designer.cs">
+      <DependentUpon>ExclusaoTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExclusaoModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExclusaoModalidade.Designer.cs">
+      <DependentUpon>ExclusaoModalidade.cs</DependentUpon>
     </Compile>
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turma.cs" />
-    <Compile Include="TurmaForms.cs">
+    <Compile Include="CadastroTurma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TurmaForms.Designer.cs">
-      <DependentUpon>TurmaForms.cs</DependentUpon>
+    <Compile Include="CadastroTurma.Designer.cs">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
@@ -121,8 +127,11 @@
     <EmbeddedResource Include="Exclusao.resx">
       <DependentUpon>Exclusao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exclusao_Modalidade.resx">
-      <DependentUpon>Exclusao_Modalidade.cs</DependentUpon>
+    <EmbeddedResource Include="ExclusaoModalidade.resx">
+      <DependentUpon>ExclusaoModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoTurma.resx">
+      <DependentUpon>ExclusaoTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,8 +142,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TurmaForms.resx">
-      <DependentUpon>TurmaForms.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroTurma.resx">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
