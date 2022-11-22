@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,19 @@ namespace Estudio
         public ExclusaoTurma()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
+
+            Turma turma = new Turma();
+
+            turma.tdsNomesModalidades();
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExclusaoTurma_Load(object sender, EventArgs e)
         {
 
         }

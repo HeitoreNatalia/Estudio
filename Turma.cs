@@ -36,6 +36,10 @@ namespace Estudio
             Modalidade = modalidade;
         }
 
+        public Turma()
+        {
+        }
+
         //métodos
 
 
@@ -71,6 +75,46 @@ namespace Estudio
 
 
         //public MySqlDataReader consultarTurma01();
+
+        public MySqlDataReader tdsIdsTurmas()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM `Estudio_Turma`", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        
+
+            return resultado;
+        }
+
+        public List<string> tdsNomesModalidades()
+        {
+            List<int> ids = new List<int>();
+            MySqlDataReader reader = tdsIdsTurmas();
+            DAO_Conexao.con.Close();
+
+
+            while(reader.Read())
+            {
+                ids.Add(int.Parse(reader["id_Modalidade"].ToString()));
+            }
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                Console.WriteLine("=========== ID " + i + " ==========");
+                Console.WriteLine(ids[i]);
+            }
+
+            return tdsNomesModalidades();
+        }
 
 
     }

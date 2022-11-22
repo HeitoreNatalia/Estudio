@@ -48,6 +48,7 @@ namespace Estudio
             this.label1 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -143,7 +144,8 @@ namespace Estudio
             // turmaToolStripMenuItem
             // 
             this.turmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDeTurmaToolStripMenuItem});
+            this.cadastroDeTurmaToolStripMenuItem,
+            this.excluirToolStripMenuItem});
             this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
             this.turmaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.turmaToolStripMenuItem.Text = "Turma";
@@ -151,7 +153,7 @@ namespace Estudio
             // cadastroDeTurmaToolStripMenuItem
             // 
             this.cadastroDeTurmaToolStripMenuItem.Name = "cadastroDeTurmaToolStripMenuItem";
-            this.cadastroDeTurmaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.cadastroDeTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastroDeTurmaToolStripMenuItem.Text = "Cadastro";
             this.cadastroDeTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeTurmaToolStripMenuItem_Click);
             // 
@@ -215,6 +217,13 @@ namespace Estudio
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "Natalia";
             // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
+            // 
             // Estudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,5 +266,6 @@ namespace Estudio
         private System.Windows.Forms.ToolStripMenuItem excluirModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
     }
 }

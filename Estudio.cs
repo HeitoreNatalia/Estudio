@@ -138,5 +138,12 @@ namespace Estudio
         {
 
         }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExclusaoTurma exclusaoTurma = new ExclusaoTurma();
+            exclusaoTurma.MdiParent = this;
+            exclusaoTurma.Show();
+        }
     }
 }

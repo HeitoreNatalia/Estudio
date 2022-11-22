@@ -30,13 +30,13 @@ namespace Estudio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboModalidade = new System.Windows.Forms.ComboBox();
-            this.cboHora = new System.Windows.Forms.ComboBox();
-            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
+            this.cboHora = new System.Windows.Forms.ComboBox();
+            this.cboModalidade = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,47 @@ namespace Estudio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turma";
             // 
-            // label1
+            // btnExcluir
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Modalidade:";
+            this.btnExcluir.Location = new System.Drawing.Point(13, 135);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(418, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // cboDiaSemana
+            // 
+            this.cboDiaSemana.FormattingEnabled = true;
+            this.cboDiaSemana.Location = new System.Drawing.Point(118, 58);
+            this.cboDiaSemana.Name = "cboDiaSemana";
+            this.cboDiaSemana.Size = new System.Drawing.Size(313, 21);
+            this.cboDiaSemana.TabIndex = 5;
+            // 
+            // cboHora
+            // 
+            this.cboHora.FormattingEnabled = true;
+            this.cboHora.Location = new System.Drawing.Point(118, 98);
+            this.cboHora.Name = "cboHora";
+            this.cboHora.Size = new System.Drawing.Size(313, 21);
+            this.cboHora.TabIndex = 4;
+            // 
+            // cboModalidade
+            // 
+            this.cboModalidade.FormattingEnabled = true;
+            this.cboModalidade.Location = new System.Drawing.Point(118, 22);
+            this.cboModalidade.Name = "cboModalidade";
+            this.cboModalidade.Size = new System.Drawing.Size(313, 21);
+            this.cboModalidade.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Hora:";
             // 
             // label2
             // 
@@ -75,47 +108,14 @@ namespace Estudio
             this.label2.Text = "Dia da semana:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Hora:";
-            // 
-            // cboModalidade
-            // 
-            this.cboModalidade.FormattingEnabled = true;
-            this.cboModalidade.Location = new System.Drawing.Point(118, 22);
-            this.cboModalidade.Name = "cboModalidade";
-            this.cboModalidade.Size = new System.Drawing.Size(313, 21);
-            this.cboModalidade.TabIndex = 3;
-            // 
-            // cboHora
-            // 
-            this.cboHora.FormattingEnabled = true;
-            this.cboHora.Location = new System.Drawing.Point(118, 98);
-            this.cboHora.Name = "cboHora";
-            this.cboHora.Size = new System.Drawing.Size(313, 21);
-            this.cboHora.TabIndex = 4;
-            // 
-            // cboDiaSemana
-            // 
-            this.cboDiaSemana.FormattingEnabled = true;
-            this.cboDiaSemana.Location = new System.Drawing.Point(118, 58);
-            this.cboDiaSemana.Name = "cboDiaSemana";
-            this.cboDiaSemana.Size = new System.Drawing.Size(313, 21);
-            this.cboDiaSemana.TabIndex = 5;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(13, 135);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(418, 23);
-            this.btnExcluir.TabIndex = 6;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Modalidade:";
             // 
             // ExclusaoTurma
             // 
@@ -125,6 +125,7 @@ namespace Estudio
             this.Controls.Add(this.groupBox1);
             this.Name = "ExclusaoTurma";
             this.Text = "ExclusaoTurma";
+            this.Load += new System.EventHandler(this.ExclusaoTurma_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
