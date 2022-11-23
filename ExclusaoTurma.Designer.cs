@@ -58,12 +58,14 @@ namespace Estudio
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Enabled = false;
             this.btnExcluir.Location = new System.Drawing.Point(13, 135);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(418, 23);
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // cboDiaSemana
             // 
@@ -88,6 +90,7 @@ namespace Estudio
             this.cboModalidade.Name = "cboModalidade";
             this.cboModalidade.Size = new System.Drawing.Size(313, 21);
             this.cboModalidade.TabIndex = 3;
+            this.cboModalidade.SelectedIndexChanged += new System.EventHandler(this.cboModalidade_SelectedIndexChanged);
             // 
             // label3
             // 

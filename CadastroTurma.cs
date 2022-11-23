@@ -75,7 +75,13 @@ namespace Estudio
             txtProfessor.Text = "";
             txtDiaSemana.Text = "";
             mskHora.Text = "";
+            btnCadastrar.Enabled = false;
 
+        }
+
+        private void mskHora_Validated(object sender, EventArgs e)
+        {
+            btnCadastrar.Enabled = true;
         }
     }
 }

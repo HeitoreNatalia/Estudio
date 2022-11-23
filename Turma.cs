@@ -69,20 +69,35 @@ namespace Estudio
             return cad;
         }
 
-        //public bool excluirTurma();
+        public bool excluirTurma()
+        {
+            bool confirmacao = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand exclui = new MySqlCommand("DELETE FROM Estudio_Turma WHERE id_modalidade=" + modalidade + " AND diasemanaTurma like '" + dia_semana + "' AND horaTurma like '" + hora + "'", DAO_Conexao.con);
+                exclui.ExecuteNonQuery();
+                confirmacao = true;
 
-        //public MySqlDataReader consultarTurma();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return confirmacao;
+        }
 
-
-        //public MySqlDataReader consultarTurma01();
-
-        public MySqlDataReader tdsIdsTurmas()
+        public MySqlDataReader consultarTurma()
         {
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM `Estudio_Turma`", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM `Estudio_Turma` WHERE id_Modalidade ='" + Modalidade + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
                 return resultado;
             }
@@ -90,12 +105,32 @@ namespace Estudio
             {
                 Console.WriteLine(ex.ToString());
             }
-        
+            return resultado;
+        }
+
+
+        //public MySqlDataReader consultarTurma01();
+
+        public MySqlDataReader tdsTurmas()
+        {
+
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT descricao FROM `Estudio_Modalidade` where  idEstudio_Modalidade IN (SELECT id_Modalidade from `Estudio_Turma`)", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
             return resultado;
         }
 
-        public List<string> tdsNomesModalidades()
+        /*public List<string> tdsNomesModalidades()
         {
             List<int> ids = new List<int>();
             MySqlDataReader reader = tdsIdsTurmas();
@@ -113,9 +148,6 @@ namespace Estudio
                 Console.WriteLine(ids[i]);
             }
 
-            return tdsNomesModalidades();
-        }
-
-
+            return tdsNomesModalidades();*/
     }
 }

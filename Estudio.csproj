@@ -74,6 +74,12 @@
     <Compile Include="Consulta_Modalidade.Designer.cs">
       <DependentUpon>Consulta_Modalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta_Turma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_Turma.Designer.cs">
+      <DependentUpon>Consulta_Turma.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO_Conexao.cs" />
     <Compile Include="Estudio.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta_Modalidade.resx">
       <DependentUpon>Consulta_Modalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta_Turma.resx">
+      <DependentUpon>Consulta_Turma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estudio.resx">
       <DependentUpon>Estudio.cs</DependentUpon>
